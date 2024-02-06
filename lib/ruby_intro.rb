@@ -53,8 +53,16 @@ def hello(name)
   return "Hello, " + name
 end
 
-def starts_with_consonant?(string)
-  # YOUR CODE HERE
+def starts_with_consonant?(s)
+  # if string is empty return false
+  return false if s.empty?
+
+  # if the first element of string is not a vowel or non alphabetic, return true
+  if s[0] =~ /[a-zA-Z]/ && s[0] =~ /[^aeiouAEIOU]/
+    return true
+  else
+    return false
+  end
 end
 
 def binary_multiple_of_4?(string)

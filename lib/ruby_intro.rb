@@ -65,8 +65,16 @@ def starts_with_consonant?(s)
   end
 end
 
-def binary_multiple_of_4?(string)
-  # YOUR CODE HERE
+def binary_multiple_of_4?(s)
+  # return false if string is not a valid binary number
+  return false unless s.match?(/^[01]+$/)
+  # convert string to integer and check if it's multiple of 4
+  s = s.to_i
+  if s%4 == 0
+    return true
+  else
+    return false
+  end
 end
 
 # Part 3

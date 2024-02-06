@@ -3,12 +3,24 @@
 # Part 1
 
 def sum(arr)
-  # YOUR CODE HERE
+  # calculating sum by using inject function
   arr.inject(0, :+)
 end
 
 def max_2_sum(arr)
-  # YOUR CODE HERE
+  #if array length is 0 return 0
+  if arr.length == 0
+    return 0
+  #if array length is 1 return the element
+  elsif arr.length == 1 
+    return arr[0]
+  #for remaining cases
+  else
+    # sort array
+      arr = arr.sort{ |a, b| b <=> a }
+    # sum of top 2 elements of the array
+      sum = arr[0] + arr[1]
+  end
 end
 
 def sum_to_n?(arr, number)

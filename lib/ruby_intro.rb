@@ -81,5 +81,39 @@ end
 
 # Object representing a book
 class BookInStock
-  # YOUR CODE HERE
+
+
+  def initialize(isbn, price)
+    @isbn = isbn
+    @price = price
+    
+    # raise Argument Error if isbn string is empty or price of book is 0 or less than o
+    raise ArgumentError if (@isbn.size == 0 or @price <=0)
+  end
+  
+  # define get method for isbn
+  def isbn
+    @isbn
+  end
+  
+   # define set method for isbn
+  def isbn=(isbn)
+    @isbn = isbn
+  end
+
+   # define get method for price
+  def price
+    @price
+  end
+  
+   # define set method for price
+  def price=(price)
+    @price = price
+  end
+
+  def price_as_string
+  # convert price to proper decimal format
+		return "$#{'%.2f' % @price}"
+	end
+
 end

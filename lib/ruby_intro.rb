@@ -23,9 +23,28 @@ def max_2_sum(arr)
   end
 end
 
-def sum_to_n?(arr, number)
-  # YOUR CODE HERE
+def sum_to_n?(arr, n)
+  # return false if array length is 0 or 1
+  return false if arr.length < 2
+  
+  # Creating an empty set to store visited elements
+  visited = Set.new
+  
+  arr.each do |num|
+    # Calculating the difference required to reach n
+    diff = n - num
+    
+    # Check if the set contains the difference
+    return true if visited.include?(diff)
+    
+    # Add the current element to the set
+    visited.add(num)
+  end
+  
+  # return false, if no pair sums up to n
+  false
 end
+
 
 # Part 2
 

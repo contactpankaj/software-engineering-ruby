@@ -49,7 +49,8 @@ end
 # Part 2
 
 def hello(name)
-  # YOUR CODE HERE
+  # concatenating the String
+  return "Hello, " + name
 end
 
 def starts_with_consonant?(string)
